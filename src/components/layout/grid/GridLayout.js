@@ -41,30 +41,17 @@ export const GridLayout = (props) => {
 
   return (
     <>  
-
-      {/* <div
-        aria-label="Grid Previewer"
-        className={styles.container}
-        role={"list"}
-        ref={scrollRef}> */}
           <Row>
           { directories.length > 0 && directories.map((dir, index) => (
-            // <span
-            //     role={"listitem"}
-            //     aria-posinset={index}
-            //     aria-setsize={10}
-            //     key={`virtualizer-child-${index}`}
-            //     className={styles.child}
-            //   >
-            <Col>
+
+            <Col key={`directory${index}`}>
               <DirectoryPreview _onClick={handleItemClick} dir={dir}/>
             </Col>
-            // </span>
           ))}
           </Row>
           <Row>
           {files.length > 0 && files.map((file, index) =>
-            <Col>
+            <Col key={`file${index}`}>
               <CardFile file={file}/>
             </Col>
             )}

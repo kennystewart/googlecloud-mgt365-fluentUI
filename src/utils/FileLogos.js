@@ -58,10 +58,20 @@ export const getPreviewType = (name) => {
         "docx": "docx",
         "png": "photo",
         "pdf": "docx",
+        "xlsx": "docx",
+        "csv": "docx",
+        "html": "docx",
+        "html": "docx",
+        "txt": "docx",
+        "md": "docx",
         "mp4": "video",
         "avi": "video",
-        "mp3": "video",
+        "mp3": "audio",
+        "exe":"exe",
+        "zip":"zip",
+        "rar":"zip"
         };
     const result = previewtypes[type] ?? "genericfile";
+    // if (result == null || result == '') return "genericfile";
     return result;
 }

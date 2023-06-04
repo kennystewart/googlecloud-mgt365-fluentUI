@@ -42,7 +42,6 @@ const FileLayout = (props) => {
           className="file__download"
         >
           <img src={downloadImage} alt="download" width={20} />
-          {/* Download<i className="fa fa-download"></i> */}
         </Link>
       );
     }

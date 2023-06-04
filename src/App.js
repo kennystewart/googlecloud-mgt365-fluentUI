@@ -54,7 +54,7 @@ function App(props) {
         "https://graph.microsoft.com",
         serverProxyDomain
       );
-
+        console.log('this is new Link:*****************' + newlink);
       const Data = fetch(newlink, {
         method: "GET",
         headers: {
