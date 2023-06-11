@@ -4,12 +4,16 @@ import downloadImage from "./assets/download.png";
 import { useComponentVisible } from "./hooks/useClickOutSide";
 import "@microsoft/mgt-components";
 import {
+  Button,
   Switch,
 } from "@fluentui/react-components";
 import { GridLayout } from "./components/layout/grid/GridLayout";
 import TableLayout from "./components/layout/table/TableLayout";
 import { Link } from "@fluentui/react-components";
-
+import {
+  ArrowDownload16Regular,
+} from "@fluentui/react-icons";
+import { downloadFile } from "./utils/SPFileManager";
 const FileLayout = (props) => {
   
   const [searchResults, setSearchResults] = useState([]);
@@ -36,13 +40,12 @@ const FileLayout = (props) => {
   const showDownloadLink = (file) => {
     if (file?.["@microsoft.graph.downloadUrl"]) {
       return (
-        <Link
-          href={file["@microsoft.graph.downloadUrl"]}
-          target="_blank"
-          className="file__download"
-        >
-          <img src={downloadImage} alt="download" width={20} />
-        </Link>
+
+            
+        <Button icon={<ArrowDownload16Regular />} onClick={(e) => downloadFile(file["@microsoft.graph.downloadUrl"])}>
+          Download
+        </Button>
+
       );
     }
   };
@@ -155,6 +158,7 @@ const FileLayout = (props) => {
       <GridLayout 
         fileData={props.files} 
         loading={props.loading} 
+        GetData={props.GetData}
         handleItemClick={handleItemClick}
         searchResults={searchResults}
         NextLink={props.NextLink}

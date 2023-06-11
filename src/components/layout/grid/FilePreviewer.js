@@ -15,17 +15,18 @@ export default function FilePreviewer(props) {
     const file = props.file;
     const fileType = getPreviewType(file?.name);
     const type = getFileTypeFromName(file?.name);
+    console.log(fileType)
     return (
     <>
-        {file?.webUrl && (fileType == "docx") && 
+        {file?.webUrl && 
             <DocPreview file={file}/>
         }
-        {file?.webUrl && (fileType =="photo") && 
+        {/* {file?.webUrl && (fileType =="photo") && 
         <div className={styles.cardImage}>
             <Image src={file.webUrl} height="260px" width="360px" fit='contain'/>
         </div>
-        }
-        {file?.webUrl && (fileType == "video") && 
+        } */}
+        {/* {file?.webUrl && (fileType == "video") && 
             <video src={file.webUrl} height="180px" />
         }
         {file?.webUrl && (fileType == "audio") && 
@@ -38,7 +39,7 @@ export default function FilePreviewer(props) {
         }
         {file?.webUrl && (fileType != "genericfile" && fileType != "docx" && fileType != "photo" && fileType != "video" ) &&
             <Image src={`https://spoprod-a.akamaihd.net/files/fabric-cdn-prod_20201008.001/assets/item-types/48/${fileType}.svg`} height="50px" />
-        }
+        } */}
     </>
   );
 }

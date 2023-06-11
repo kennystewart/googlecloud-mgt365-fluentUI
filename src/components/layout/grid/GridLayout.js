@@ -26,45 +26,57 @@ const useStyles = makeStyles({
       lineHeight: "20px",
       height: "fit-content",
     },
+    gridContainer: {
+      display: "grid",
+      gridTemplateColumns: "auto auto auto",
+      backgroundColor: "#2196F3",
+      padding: "10px",
+    },
+    gridItem: {
+      border: "1px solid rgba(0, 0, 0, 0.8)",
+      padding: "20px",
+      fontSize: "30px",
+      textAlign: "center"
+    }
 });
   
 export const GridLayout = (props) => {
   const styles = useStyles();
   
-  const {fileData, handleItemClick, NextLink, loading, saerchResult} = props;
+  const {fileData, handleItemClick, NextLink, loading,GetData, saerchResult} = props;
   const { scrollRef } =
   useStaticVirtualizerMeasure({
     defaultItemSize: 200,
   });
   const directories = fileData.filter(file=> !file?.["@microsoft.graph.downloadUrl"]);
   const files = fileData.filter(file => file?.["@microsoft.graph.downloadUrl"]);
-
+  const style = useStyles();
   return (
     <>  
-          <Row>
+          <div className={styles.gridContainer}>
           { directories.length > 0 && directories.map((dir, index) => (
 
-            <Col key={`directory${index}`}>
+            <div className={styles.gridItem} key={`directory${index}`}>
               <DirectoryPreview _onClick={handleItemClick} dir={dir}/>
-            </Col>
+            </div>
           ))}
-          </Row>
-          <Row>
+          </div>
+          <div className={styles.gridContainer}>
           {files.length > 0 && files.map((file, index) =>
-            <Col key={`file${index}`}>
+            <div className={styles.gridItem} key={`file${index}`}>
               <CardFile file={file}/>
-            </Col>
+            </div>
             )}
-          </Row>
-          <Row>
+          </div>
+          
             {NextLink
               ? !loading && (
-                <Col>
+                <Button onClick={GetData}>
                   Load more
-                </Col>
+                </Button>
                 )
               : null}
-          </Row>
+          
     {/* </div> */}
   </>);
 };
