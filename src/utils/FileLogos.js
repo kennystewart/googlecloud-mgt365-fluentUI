@@ -1,3 +1,15 @@
+const resolveAsset = (asset) => {
+    const ASSET_URL =
+      "/filetypes/";
+    return `${ASSET_URL}${asset}`;
+};
+
+export  const excelLogo = resolveAsset("excel.png");
+export  const wordLogo = resolveAsset("word.png");
+export  const jpgLogo = resolveAsset("jpg.png");
+export  const powerpointLogoURL = resolveAsset("powerpoint.svg");
+export  const pngLogo = resolveAsset("png.png");
+
 export const getThumbnail = (file) => {
     if (file?.folder) {
       return "https://spoprod-a.akamaihd.net/files/fabric-cdn-prod_20201008.001/assets/item-types/48/folder.svg";

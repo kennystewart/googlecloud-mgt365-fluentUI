@@ -29,8 +29,8 @@ import FilePreviewer from "./FilePreviewer";
 import { FileDownloadAsset } from "../table/TableDatas";
 
 import {} from '@fluentui/react-icons'
+import OpenDialogImage from "./drivers/DialogViewer";
 import { downloadFile } from "../../../utils/SPFileManager";
-import OpenDialogViewer from "./drivers/DialogViewer";
   const useStyles = makeStyles({
   
     description: {
@@ -57,6 +57,7 @@ export  const CardFile = (props) => {
     const openFile = (e) => {
       e.preventDefault();
 
+      debugger;
       saveAs(
         file?.webUrl,
         file?.name
@@ -103,7 +104,7 @@ export  const CardFile = (props) => {
         />
   
         <CardFooter>
-              <OpenDialogViewer file={file} />
+              <OpenDialogImage file={file} />
               <Button icon={<ArrowDownload16Regular />} onClick={(e) => downloadFile(file["@microsoft.graph.downloadUrl"])}>
                   Download
               </Button>

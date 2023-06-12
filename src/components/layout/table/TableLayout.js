@@ -5,14 +5,10 @@ import downloadImage from "../../../assets/download.png";
 import linkImage from "../../../assets/link.png";
 import copyImage from "../../../assets/copy.png";
 import tickImage from "../../../assets/tick.png";
-import {Link, Table, TableHeader, TableRow, TableHeaderCell, TableBody, TableCell, TableCellLayout, ToggleButton, Button } from '@fluentui/react-components';
+import {Link, Table, TableHeader, TableRow, TableHeaderCell, TableBody, TableCell, TableCellLayout, ToggleButton } from '@fluentui/react-components';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import { FileDownloadAsset, FileTableColumns } from './TableDatas';
-import { downloadFile } from '../../../utils/SPFileManager';
-import {
-  ArrowDownload16Regular,
-} from "@fluentui/react-icons";
 
 export default function TableLayout(props) {
     const columns = FileTableColumns;
@@ -20,17 +16,14 @@ export default function TableLayout(props) {
       const showDownloadLink = (file) => {
         if (file?.[FileDownloadAsset]) {
           return (
-            // <Link
-            //   to={file[FileDownloadAsset]}
-            //   target="_blank"
-            //   className="file__download"
-            // >
-            //   <img src={downloadImage} alt="download" width={20} />
-            //   {/* Download<i className="fa fa-download"></i> */}
-            // </Link>
-          <Button icon={<ArrowDownload16Regular />} onClick={(e) => downloadFile(file["@microsoft.graph.downloadUrl"])}>
-            Download
-          </Button>
+            <Link
+              to={file[FileDownloadAsset]}
+              target="_blank"
+              className="file__download"
+            >
+              <img src={downloadImage} alt="download" width={20} />
+              {/* Download<i className="fa fa-download"></i> */}
+            </Link>
           );
         }
       };
