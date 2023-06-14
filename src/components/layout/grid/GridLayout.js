@@ -9,12 +9,19 @@ import {
   } from "@fluentui/react-components/unstable";
 import "../../../App.css"
 import { DirectoryPreview } from "./Directory";
+<<<<<<< HEAD
 import { Col, Row } from "fluentui-react-grid";
+=======
+>>>>>>> 2900fc4684d68df49bdf488005cabd1e4e58d751
   // custom styles
 const useStyles = makeStyles({
 
   container: {
+<<<<<<< HEAD
       ...shorthands.gap("12px"),
+=======
+      ...shorthands.gap("10px"),
+>>>>>>> 2900fc4684d68df49bdf488005cabd1e4e58d751
       flexDirection: "row",
       display: "flex",
       flexWrap: "wrap",
@@ -31,7 +38,11 @@ const useStyles = makeStyles({
 export const GridLayout = (props) => {
   const styles = useStyles();
   
+<<<<<<< HEAD
   const {fileData, handleItemClick, NextLink, loading, saerchResult} = props;
+=======
+  const {fileData, handleItemClick} = props;
+>>>>>>> 2900fc4684d68df49bdf488005cabd1e4e58d751
   const { scrollRef } =
   useStaticVirtualizerMeasure({
     defaultItemSize: 200,
@@ -41,6 +52,7 @@ export const GridLayout = (props) => {
 
   return (
     <>  
+<<<<<<< HEAD
           <Row>
           { directories.length > 0 && directories.map((dir, index) => (
 
@@ -66,5 +78,35 @@ export const GridLayout = (props) => {
               : null}
           </Row>
     {/* </div> */}
+=======
+
+      <div
+        aria-label="Grid Previewer"
+        className={styles.container}
+        role={"list"}
+        ref={scrollRef}>
+          { directories.length > 0 && directories.map((dir, index) => (
+            <span
+                role={"listitem"}
+                aria-posinset={index}
+                aria-setsize={10}
+                key={`virtualizer-child-${index}`}
+                className={styles.child}
+              >
+                <DirectoryPreview _onClick={handleItemClick} dir={dir}/>
+            </span>
+          ))}
+          {files.length > 0 && files.map((file, index) =>
+            <span
+            role={"listitem"}
+            aria-posinset={index}
+            aria-setsize={10}
+            key={`virtualizer-child-${index}`}
+            className={styles.child}
+            >
+              <CardFile file={file}/>
+            </span>)}
+    </div>
+>>>>>>> 2900fc4684d68df49bdf488005cabd1e4e58d751
   </>);
 };

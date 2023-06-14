@@ -32,7 +32,11 @@
   max-width: 1200px;
   padding: 0px 15px;
   margin: 0 auto;
+<<<<<<< HEAD
   /* background-color: rgb(246, 246, 246); */
+=======
+  background-color: rgb(246, 246, 246);
+>>>>>>> 2900fc4684d68df49bdf488005cabd1e4e58d751
 }
 
 @keyframes App-logo-spin {
@@ -65,7 +69,11 @@
   padding: 1em;
   display: flex;
   justify-content: center;
+<<<<<<< HEAD
   background-color: rgb(245, 238, 238);
+=======
+  background-color: silver;
+>>>>>>> 2900fc4684d68df49bdf488005cabd1e4e58d751
 }
 
 h1 {

@@ -9,6 +9,7 @@ export  const wordLogo = resolveAsset("word.png");
 export  const jpgLogo = resolveAsset("jpg.png");
 export  const powerpointLogoURL = resolveAsset("powerpoint.svg");
 export  const pngLogo = resolveAsset("png.png");
+<<<<<<< HEAD
 
 export const getThumbnail = (file) => {
     if (file?.folder) {
@@ -20,6 +21,21 @@ export const getThumbnail = (file) => {
       return "https://modernb.akamai.odsp.cdn.office.net/files/fabric-cdn-prod_20211025.001/assets/item-types/20/onetoc.svg";
     }
   };
+=======
+  
+export const getThumbnail = (file) => {
+if (file?.folder) {
+    return "/filetypes/folder.png";
+    } else if (file?.file) {
+    const imagetype = getFileType(file.file.mimeType);
+    return `/filetypes/${imagetype}.png`;
+    } else if (file.package.type === "oneNote") {
+    return "/filetypes/text.png";
+    } else {
+        return "/filetypes/general.png"
+    }
+};
+>>>>>>> 2900fc4684d68df49bdf488005cabd1e4e58d751
 
 export  const getFileType = (type) => {
     const filetypes = {
@@ -43,6 +59,7 @@ export  const getFileType = (type) => {
     };
     const imgtype = filetypes[type] ?? "genericfile";
     return imgtype;
+<<<<<<< HEAD
 };
 
 export const getFileTypeFromName = (name) => {
@@ -75,3 +92,6 @@ export const getPreviewType = (name) => {
     // if (result == null || result == '') return "genericfile";
     return result;
 }
+=======
+};
+>>>>>>> 2900fc4684d68df49bdf488005cabd1e4e58d751

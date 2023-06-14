@@ -1,4 +1,5 @@
 import React from 'react';
+<<<<<<< HEAD
 import { getFileType, getFileTypeFromName, getPreviewType } from '../../../utils/FileLogos';
 import { DocPreview } from './drivers/DocPreview';
 import { Image, makeStyles } from '@fluentui/react-components';
@@ -38,6 +39,21 @@ export default function FilePreviewer(props) {
         }
         {file?.webUrl && (fileType != "genericfile" && fileType != "docx" && fileType != "photo" && fileType != "video" ) &&
             <Image src={`https://spoprod-a.akamaihd.net/files/fabric-cdn-prod_20201008.001/assets/item-types/48/${fileType}.svg`} height="50px" />
+=======
+import { getFileType } from '../../../utils/FileLogos';
+import { DocPreview } from './PreviewFileTypes/DocPreview';
+
+export default function FilePreviewer(props) {
+    const file = props.file;
+    const fileType = getFileType(props.file.file?.mimeType);
+    console.log(fileType);
+    return (
+    <>
+        {file?.webUrl && (fileType == "docx" || fileType == "pdf" || fileType == "xlsx") && 
+            <DocPreview file={file} type={fileType}/>}
+        {file?.webUrl && (fileType =="photo") && 
+            <img src={file.webUrl} height="180px" />
+>>>>>>> 2900fc4684d68df49bdf488005cabd1e4e58d751
         }
     </>
   );

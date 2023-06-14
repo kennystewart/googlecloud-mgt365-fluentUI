@@ -42,7 +42,13 @@ const FileLayout = (props) => {
           className="file__download"
         >
           <img src={downloadImage} alt="download" width={20} />
+<<<<<<< .mine
         </Link>
+
+=======
+          {/* Download<i className="fa fa-download"></i> */}
+        </Link>
+>>>>>>> .theirs
       );
     }
   };
@@ -136,6 +142,7 @@ const FileLayout = (props) => {
           </span>
         ))}
       </div>
+<<<<<<< .mine
       {!showGridView &&
         <TableLayout 
           loading={props.loading} 
@@ -150,6 +157,22 @@ const FileLayout = (props) => {
           GetData={props.GetData}
           ref={ref}
           textareaRef={textareaRef} />}      
+=======
+      {!showGridView &&
+        <TableLayout 
+          loading={props.loading} 
+          openBox={openBox} 
+          isComponentVisible={isComponentVisible} 
+          files={props.files} 
+          handleItemClick={handleItemClick}
+          handleLinkShare={handleLinkShare}
+          searchResults={searchResults}
+          openFolder={openFolder}
+          showDownloadLink={showDownloadLink}
+          NextLink={props.NextLink}
+          GetData={props.GetData} 
+          ref={ref} />}      
+>>>>>>> .theirs
 
       {showGridView && 
       <GridLayout 
