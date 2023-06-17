@@ -1,3 +1,6 @@
+# Hi braden. this is my link.
+kennystwork@gmail
+skype:
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
