@@ -59,7 +59,7 @@ export const DocPreview = (props) => {
         errorComponent={CustomErrorComponent}
         onError={onError}
       />     */}
-      <iframe src="https://dwsnow.sharepoint.com/_layouts/15/Doc.aspx?sourcedoc=%7B53DA9ABA-BD2B-41D3-8225-D2D94EA90F02%7D&file=Document.docx&action=default&mobileredirect=true"
+      <iframe src="https://dwsnow.sharepoint.com/_layouts/15/Doc.aspx?sourcedoc=%7B53DA9ABA-BD2B-41D3-8225-D2D94EA90F02%7D&action=default&mobileredirect=true"
         width="326px"
         height="180px"
         frameborder="0">
