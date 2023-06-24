@@ -23,10 +23,9 @@ function App(props) {
   const [FilesData, setFilesData] = useState([]);
   const [NextLink, setNextLink] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [itemId, setItemId] = useState("015FCMOUQW6TXD7STWXZEJYSNTOHMKPEW7");
+  const [itemId, setItemId] = useState("");
 
   /** Get Next link based on response */
-  const serverProxyDomain = "https://walrus-app-v3k99.ondigitalocean.app/proxy/63e4ce5542771d5254e2525c";
   useEffect(() => {
     const MgtFilesData = document.querySelector("mgt-file-list");
     MgtFilesData.addEventListener("templateRendered", (e) => {
@@ -76,7 +75,7 @@ function App(props) {
       <h1>{props.title ?? "Files List"}</h1>
       <Login />
       <FileList
-        driveId="b!u437h9hN5kKKuYv4KxMZ9edZk038P2JOh0O-CbQrkFl3rjkpSNnESL7EuydJmf86"
+        driveId=""
         itemId={itemId}
       >
         <FilesResponse setFilesData={setFilesData} setLoading={setLoading} />
