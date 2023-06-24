@@ -40,7 +40,7 @@ export const DocPreview = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const parentUrl = "https://walrus-app-v3k99.ondigitalocean.app/proxy/63e4ce5542771d5254e2525c/v1.0/drives/b!u437h9hN5kKKuYv4KxMZ9edZk038P2JOh0O-CbQrkFl3rjkpSNnESL7EuydJmf86/items/";
+        const parentUrl = "";
         const response = await fetch(parentUrl + file.id + "/preview", {
           method: "POST",
           headers: {
